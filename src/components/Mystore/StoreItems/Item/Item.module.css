@@ -1,0 +1,22 @@
+.Content {
+    width: 200px;
+    height: 200px;
+    flex: 1 0 26%;
+    border: 2px solid #eeeeee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+@media ( max-width: 768px) {
+    .Content {
+      flex-basis: 34%;
+    }
+  }
+  
+  @media ( max-width: 320px) {
+    .Content {
+      flex-basis: 51%;
+    }
+  }
