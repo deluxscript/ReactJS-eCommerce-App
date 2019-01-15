@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddToCartBtn = ( props ) => (
     <div>
-        Add to Cart
+        <button onClick={props.btn}>Add to Cart</button>
     </div>        
 );
 

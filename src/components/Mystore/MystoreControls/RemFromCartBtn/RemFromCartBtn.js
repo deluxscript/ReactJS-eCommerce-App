@@ -2,7 +2,7 @@ import React from 'react';
 
 const RemFromCartBtn = ( props ) => (
     <div>
-        Remove from Cart
+        <button>Remove from Cart</button>
     </div>        
 );
 
