@@ -24,42 +24,42 @@ let StoreItems = [
         id: 4,
         itemName: 'Axus Laptop',
         itemImg: 'http://img.url',
-        itemPrice: 300000.00,
+        itemPrice: 1300.00,
         itemDescription: 'Lorem ipsum tegd hbfghbvv'
     },
     {
         id: 5,
         itemName: 'Axus Laptop',
         itemImg: 'http://img.url',
-        itemPrice: 300000.00,
+        itemPrice: 9000.00,
         itemDescription: 'Lorem ipsum tegd hbfghbvv'
     },
     {
         id: 6,
         itemName: 'Axus Laptop',
         itemImg: 'http://img.url',
-        itemPrice: 300000.00,
+        itemPrice: 1000.00,
         itemDescription: 'Lorem ipsum tegd hbfghbvv'
     },
     {
         id: 7,
         itemName: 'Axus Laptop',
         itemImg: 'http://img.url',
-        itemPrice: 300000.00,
+        itemPrice: 7000.00,
         itemDescription: 'Lorem ipsum tegd hbfghbvv'
     },
     {
         id: 8,
         itemName: 'Axus Laptop',
         itemImg: 'http://img.url',
-        itemPrice: 300000.00,
+        itemPrice: 3000.00,
         itemDescription: 'Lorem ipsum tegd hbfghbvv'
     },
     {
         id: 9,
         itemName: 'Axus Laptop',
         itemImg: 'http://img.url',
-        itemPrice: 300000.00,
+        itemPrice: 2500.00,
         itemDescription: 'Lorem ipsum tegd hbfghbvv'
     }
 ]

@@ -1,0 +1,17 @@
+.Content {
+    width: 75%;
+    float: left;
+}
+
+.Cart {
+    width: 23%;
+    float: right;
+    margin: 10px;
+    text-align: center;
+}
+
+@media ( max-width: 768px) {
+    .Content {
+      width: 100%;
+    }
+  }

@@ -1,16 +1,20 @@
 import React from 'react';
 
 import classes from './Item.module.css';
+import Aux from '../../../../hoc/Aux';
 
 const Item = ( props ) => {
 	return(
 		<div className={classes.Content}>
-			<div>
-			<img alt="moniker " src={props.img} />
-				<h2>{props.name}</h2>
+			{/* <div> */}
+			<Aux>
+				<img alt="moniker " src={props.img} />
+				<h4>{props.name}</h4>
 				<p>{props.desc}</p>
-                <p>{props.price}</p>
-			</div>
+                <p>₦{props.price}</p>
+			</Aux>
+			
+			{/* </div> */}
 		</div>
 	);
 }
