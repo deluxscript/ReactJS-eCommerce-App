@@ -12,7 +12,7 @@ class StoreBuilder extends Component {
         cartItems: []
     }
 
-    addItemCountHandler = (i) => {
+    addItemCountHandler = (id) => {
         console.log('clicked');
     }
 
@@ -24,7 +24,7 @@ class StoreBuilder extends Component {
             <Aux>
                 <Mystore
                     cart={this.state.cartItemsCount}
-                    cartCount={this.addItemCountHandler}
+                    cartItem={this.addItemCountHandler}
                     />
                 <div className={classes.Control}>Build Control</div>
             </Aux>

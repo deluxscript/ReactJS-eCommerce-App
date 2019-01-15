@@ -12,7 +12,7 @@ const Item = ( props ) => {
 				<h4>{props.name}</h4>
 				<p>{props.desc}</p>
                 <p>₦{props.price}</p>
-				<MystoreControls />
+				<MystoreControls btnId ={props.id} btnaction={props.Itemkey}/>
 			</Aux>
 		</div>
 	);

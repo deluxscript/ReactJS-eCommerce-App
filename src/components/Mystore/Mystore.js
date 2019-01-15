@@ -12,7 +12,7 @@ const Mystore = ( props ) => {
         <Aux>
             <div className={classes.Content}>
                 <SingleItem 
-                    updatedCount={props.cartCount}
+                    Item={props.cartItem}
                 />
             </div>
             <div className={classes.Cart}>
