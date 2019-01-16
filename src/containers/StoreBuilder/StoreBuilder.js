@@ -13,10 +13,8 @@ class StoreBuilder extends Component {
         TotalPrice: 0
     }
 
-    addItemCountHandler = (item) => {
+    addItemHandler = (item) => {
         const newitemsInCart = this.state.cartItems.concat(item);
-
-        // const oldCount = this.state.cartItemsCount;
         const updatedCartItemsCount = newitemsInCart.length;
         
         this.setState({
@@ -25,16 +23,36 @@ class StoreBuilder extends Component {
         })
     }
 
-    // addItemHandler = () => {
+    removeItemHandler = (item) => {
         
+        const copyItemsinCart = this.state.cartItems;
+        const index = copyItemsinCart.indexOf(item);
+        
+        if (index !== -1) {
+            copyItemsinCart.splice(index, 1);
+            const updatedCartItemsCount = copyItemsinCart.length;
+            this.setState({
+                cartItems: copyItemsinCart,
+                cartItemsCount: updatedCartItemsCount
+            });
+          }
+    }
+
+    // disableButton = (item) => {
+    //     const copyItemsinCart = this.state.cartItems;
+    //     let index = copyItemsinCart.indexOf(item);
+
+    //     console.log(index = 0);
     // }
+
     render() {
         return (
             <Aux>
                 <Mystore
                     cart={this.state.cartItemsCount}
                     items={this.state.cartItems}
-                    addItem={this.addItemCountHandler}
+                    addItem={this.addItemHandler}
+                    removeItem={this.removeItemHandler}
                     totalPrice={this.state.TotalPrice}
                     />
                 <div className={classes.Control}>Build Control</div>

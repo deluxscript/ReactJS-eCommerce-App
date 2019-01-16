@@ -15,13 +15,11 @@ const Item = ( props ) => {
 				<p className={classes.ItemName}>{props.name}</p>
 				<p className={classes.ItemSeller}>{props.desc}</p>
                 <p className={classes.ItemPrice}>₦{props.price}</p>
-				<MystoreControls btnId ={props.id} btnaction={props.Itemkey}/>
-				{/* {StoreItems.map(Item => (
-					<MystoreControls 
-						key={Item.id}
-						name={Item.name}
-					/>
-				))} */}
+				<MystoreControls
+					btnId ={props.id}
+					btnaction={props.Itemkey}
+					remBtnaction={props.remItemKey}
+				/>
 			</Aux>
 		</div>
 	);

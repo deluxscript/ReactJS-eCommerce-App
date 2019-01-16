@@ -13,6 +13,7 @@ const Mystore = ( props ) => {
             <div className={classes.Content}>
                 <SingleItem 
                     Item={props.addItem}
+                    deleteItem={props.removeItem}
                 />
             </div>
             <div className={classes.Cart}>

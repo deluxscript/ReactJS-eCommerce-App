@@ -9,7 +9,7 @@ const Cart = ( props ) => {
     const itemsInCart = props.cartItems;
 
     let cartDisplay = itemsInCart.map(item => {
-        return <div className={classes.ItemContent}> {item} </div>;
+        return <div className={classes.ItemContent} key={item}> {item} </div>;
       });
 
     if (cartTemplate === 0) {
