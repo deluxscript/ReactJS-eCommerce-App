@@ -1,8 +1,10 @@
 import React from 'react';
 
+import classes from './RemFromCartBtn.module.css';
+
 const RemFromCartBtn = ( props ) => (
     <div>
-        <button>Remove from Cart</button>
+        <button className={classes.Button}>Remove from Cart</button>
     </div>        
 );
 

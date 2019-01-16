@@ -3,16 +3,25 @@ import React from 'react';
 import classes from './Item.module.css';
 import Aux from '../../../../hoc/Aux';
 import MystoreControls from '../../MystoreControls/MystoreControls';
+// import StoreItems from '../StoreItems';
 
 const Item = ( props ) => {
 	return(
 		<div className={classes.Content}>
 			<Aux>
-				<img alt="moniker " src={props.img} />
-				<h4>{props.name}</h4>
-				<p>{props.desc}</p>
-                <p>₦{props.price}</p>
+				<div className={classes.Imgbox}>
+					<img alt="moniker " src={props.img} />
+				</div>
+				<p className={classes.ItemName}>{props.name}</p>
+				<p className={classes.ItemSeller}>{props.desc}</p>
+                <p className={classes.ItemPrice}>₦{props.price}</p>
 				<MystoreControls btnId ={props.id} btnaction={props.Itemkey}/>
+				{/* {StoreItems.map(Item => (
+					<MystoreControls 
+						key={Item.id}
+						name={Item.name}
+					/>
+				))} */}
 			</Aux>
 		</div>
 	);

@@ -16,7 +16,7 @@ const SingleItem = ( props ) => {
                     img={StoreItems[key].itemImg}
                     price={StoreItems[key].itemPrice}
                     desc={StoreItems[key].itemDescription}
-                    Itemkey={() => props.Item(key)}
+                    Itemkey={() => props.Item(StoreItems[key].itemName)}
                     />)
                     }
         </div>

@@ -12,12 +12,14 @@ const Mystore = ( props ) => {
         <Aux>
             <div className={classes.Content}>
                 <SingleItem 
-                    Item={props.cartItem}
+                    Item={props.addItem}
                 />
             </div>
             <div className={classes.Cart}>
                 <Cart
                     cartCount={props.cart}
+                    cartItems={props.items}
+                    tPrice={props.totalPrice}
                 />
             </div>
         </Aux>

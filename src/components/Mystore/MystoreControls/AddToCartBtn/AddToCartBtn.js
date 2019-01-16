@@ -1,8 +1,10 @@
 import React from 'react';
 
+import classes from './AddToCartBtn.module.css';
+
 const AddToCartBtn = ( props ) => (
     <div>
-        <button onClick={props.to}>Add to Cart</button>
+        <button className={classes.Button} onClick={props.to}>Add to Cart</button>
     </div>        
 );
 

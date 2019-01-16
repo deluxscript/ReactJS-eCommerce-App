@@ -8,10 +8,18 @@
     float: right;
     margin: 10px;
     text-align: center;
+    background-color: #e9eff3;
+    min-height: 550px;
 }
 
 @media ( max-width: 768px) {
     .Content {
+      width: 100%;
+    }
+  }
+
+  @media ( max-width: 768px) {
+    .Cart {
       width: 100%;
     }
   }

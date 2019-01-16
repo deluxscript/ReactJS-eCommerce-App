@@ -1,0 +1,21 @@
+.Button {
+    padding: 8px 12px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #00AADC;
+    border-color: transparent;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: center;
+    -webkit-transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out, border-color 0.2s ease-out;
+}
+
+.Button:focus {
+    outline: none;
+}
