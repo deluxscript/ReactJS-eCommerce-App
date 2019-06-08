@@ -7,13 +7,15 @@ const Cart = ( props ) => {
 
     let cartTemplate = props.cartCount;
     const itemsInCart = props.cartItems;
-
-    let cartDisplay = itemsInCart.map(item => {
-        return <div className={classes.ItemContent} key={item}> {item} </div>;
-      });
+    let cartDisplay;
 
     if (cartTemplate === 0) {
         cartDisplay = <div className={classes.ItemContent}>Your shopping cart is empty!</div>
+    }
+    else {
+        cartDisplay = itemsInCart.map(item => {
+            return <div className={classes.ItemContent} key={item}> {item} </div>;
+          });
     }
 	return(
 		<Aux>
@@ -21,7 +23,7 @@ const Cart = ( props ) => {
             <p className={classes.Content}>Number of Items in Cart: {props.cartCount}</p>
             <p className={classes.Content}>Total Price: ₦{props.tPrice}.00</p>
 			{cartDisplay}
-            <button className={classes.Button}>Checkout</button>
+            <button id="checkout" disabled={!props.disablebtn} className={classes.Button}>Checkout</button>
 		</Aux>
 	);
 }

@@ -16,8 +16,8 @@ const SingleItem = ( props ) => {
                     img={StoreItems[key].itemImg}
                     price={StoreItems[key].itemPrice}
                     desc={StoreItems[key].itemDescription}
-                    Itemkey={() => props.Item(StoreItems[key].itemName)}
-                    remItemKey={() => props.deleteItem(StoreItems[key].itemName)}
+                    Itemkey={() => props.Add(StoreItems[key])}
+                    remItemKey={() => props.deleteItem(StoreItems[key])}
                     />)
                     }
         </div>

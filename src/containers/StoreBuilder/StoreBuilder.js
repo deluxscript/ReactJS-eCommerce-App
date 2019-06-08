@@ -10,40 +10,58 @@ class StoreBuilder extends Component {
     state = {
         cartItemsCount: 0,
         cartItems: [],
-        TotalPrice: 0
+        TotalPrice: 0,
+        purchaseable: false
     }
 
     addItemHandler = (item) => {
-        const newitemsInCart = this.state.cartItems.concat(item);
+        
+        const newitemsInCart = this.state.cartItems.concat(item.itemName);
         const updatedCartItemsCount = newitemsInCart.length;
+
+        const oldPrice = this.state.TotalPrice;
+        const updatedPrice = oldPrice + item.itemPrice;
         
         this.setState({
             cartItemsCount: updatedCartItemsCount,
-            cartItems: newitemsInCart
-        })
+            cartItems: newitemsInCart,
+            TotalPrice: updatedPrice,
+            purchaseable: updatedCartItemsCount > 0
+        });
+
     }
 
     removeItemHandler = (item) => {
         
         const copyItemsinCart = this.state.cartItems;
-        const index = copyItemsinCart.indexOf(item);
+        const index = copyItemsinCart.indexOf(item.itemName);
+
+
+        console.log(index);
         
         if (index !== -1) {
             copyItemsinCart.splice(index, 1);
             const updatedCartItemsCount = copyItemsinCart.length;
+
+            const oldPrice = this.state.TotalPrice;
+            const updatedPrice = oldPrice-item.itemPrice;
+
             this.setState({
                 cartItems: copyItemsinCart,
-                cartItemsCount: updatedCartItemsCount
+                cartItemsCount: updatedCartItemsCount,
+                TotalPrice: updatedPrice,
+                purchaseable: updatedCartItemsCount > 0
             });
           }
     }
 
-    // disableButton = (item) => {
-    //     const copyItemsinCart = this.state.cartItems;
-    //     let index = copyItemsinCart.indexOf(item);
+    disableButton = () => {
+        const ItemsinCart = this.state.cartItems;
 
-    //     console.log(index = 0);
-    // }
+        this.setState({
+            purchaseable: ItemsinCart > 0
+        });
+    }
 
     render() {
         return (
@@ -54,6 +72,7 @@ class StoreBuilder extends Component {
                     addItem={this.addItemHandler}
                     removeItem={this.removeItemHandler}
                     totalPrice={this.state.TotalPrice}
+                    prchase={this.state.purchaseable}
                     />
                 <div className={classes.Control}>Build Control</div>
             </Aux>

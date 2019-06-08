@@ -62,6 +62,6 @@ let StoreItems = [
         itemPrice: 2500.00,
         itemDescription: 'by Nike'
     }
-]
+];
 
 export default StoreItems;

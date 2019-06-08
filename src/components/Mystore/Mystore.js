@@ -12,7 +12,7 @@ const Mystore = ( props ) => {
         <Aux>
             <div className={classes.Content}>
                 <SingleItem 
-                    Item={props.addItem}
+                    Add={props.addItem}
                     deleteItem={props.removeItem}
                 />
             </div>
@@ -21,6 +21,7 @@ const Mystore = ( props ) => {
                     cartCount={props.cart}
                     cartItems={props.items}
                     tPrice={props.totalPrice}
+                    disablebtn = {props.prchase}
                 />
             </div>
         </Aux>
