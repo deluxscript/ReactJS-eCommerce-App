@@ -23,7 +23,7 @@ const Cart = ( props ) => {
             <p className={classes.Content}>Number of Items in Cart: {props.cartCount}</p>
             <p className={classes.Content}>Total Price: ₦{props.tPrice}.00</p>
 			{cartDisplay}
-            <button id="checkout" disabled={!props.disablebtn} className={classes.Button}>Checkout</button>
+            <button id="checkout" onClick={props.checkout} disabled={!props.disablebtn} className={classes.Button}>Order Now</button>
 		</Aux>
 	);
 }

@@ -11,7 +11,8 @@ class StoreBuilder extends Component {
         cartItemsCount: 0,
         cartItems: [],
         TotalPrice: 0,
-        purchaseable: false
+        purchaseable: false,
+        purchasing: false
     }
 
     addItemHandler = (item) => {
@@ -63,6 +64,22 @@ class StoreBuilder extends Component {
         });
     }
 
+    purchaseHandler = () => {
+        this.setState({
+            purchasing: true
+        })
+    }
+
+    cancelPurchaseHandler = () => {
+        this.setState({
+            purchasing: false
+        })
+    }
+
+    continuePurchaseHandler = () => {
+        alert('continue');
+    }
+
     render() {
         return (
             <Aux>
@@ -73,6 +90,10 @@ class StoreBuilder extends Component {
                     removeItem={this.removeItemHandler}
                     totalPrice={this.state.TotalPrice}
                     prchase={this.state.purchaseable}
+                    purHandler={this.purchaseHandler}
+                    cancelpurHandler={this.cancelPurchaseHandler}
+                    continuePurchase={this.continuePurchaseHandler}
+                    purchasing={this.state.purchasing}
                     />
                 <div className={classes.Control}>Build Control</div>
             </Aux>
