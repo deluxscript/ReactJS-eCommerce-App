@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/Aux/Aux';
 import Mystore from '../../components/Mystore/Mystore';
 
 import classes from './StoreBuilder.module.css';

@@ -7,7 +7,7 @@ import Ordersummary from '../Mystore/OrderSummary/Ordersummary';
 
 import SingleItem from './StoreItems/SingleItem';
 import Cart from './Cart/Cart';
-import Aux from '../../hoc/Aux';
+import Aux from '../../hoc/Aux/Aux';
 
 const Mystore = ( props ) => {
 

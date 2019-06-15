@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from './Item.module.css';
-import Aux from '../../../../hoc/Aux';
+import Aux from '../../../../hoc/Aux/Aux';
 import MystoreControls from '../../MystoreControls/MystoreControls';
 // import StoreItems from '../StoreItems';
 
