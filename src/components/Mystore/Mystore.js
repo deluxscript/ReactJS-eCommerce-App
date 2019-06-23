@@ -4,6 +4,7 @@ import classes from './Mystore.module.css';
 
 import Modal from '../UI/Modal/Modal';
 import Ordersummary from '../Mystore/OrderSummary/Ordersummary';
+import Spinner from '../UI/Spinner/Spinner';
 
 import SingleItem from './StoreItems/SingleItem';
 import Cart from './Cart/Cart';
@@ -11,10 +12,16 @@ import Aux from '../../hoc/Aux/Aux';
 
 const Mystore = ( props ) => {
 
+    let OrderSummary = <Ordersummary orderItems = {props.items} continue={props.continuePurchase} cancel={props.cancelpurHandler}  price={props.totalPrice}/>;
+
+    if(props.loading){
+        OrderSummary = <Spinner />;
+    }
+
     return (
         <Aux>
             <Modal show={props.purchasing} cancelModal = {props.cancelpurHandler}>
-                <Ordersummary orderItems = {props.items} continue={props.continuePurchase} cancel={props.cancelpurHandler}  price={props.totalPrice}/>
+                {OrderSummary}
             </Modal>
             <div className={classes.Content}>
                 <SingleItem 

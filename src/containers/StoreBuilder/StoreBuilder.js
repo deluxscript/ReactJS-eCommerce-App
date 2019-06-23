@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Aux/Aux';
 import Mystore from '../../components/Mystore/Mystore';
 
+import axios from '../../axios-orders';
+
 import classes from './StoreBuilder.module.css';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 class StoreBuilder extends Component {
 
@@ -12,7 +15,8 @@ class StoreBuilder extends Component {
         cartItems: [],
         TotalPrice: 0,
         purchaseable: false,
-        purchasing: false
+        purchasing: false,
+        loading: false
     }
 
     addItemHandler = (item) => {
@@ -77,7 +81,31 @@ class StoreBuilder extends Component {
     }
 
     continuePurchaseHandler = () => {
-        alert('continue');
+        //alert('continue');
+        this.setState({
+            loading: true
+        });
+        const data = {
+            items: this.state.cartItems,
+            price: this.state.TotalPrice,
+            customer:   {
+                name: 'Oladele Drille',
+                address: {
+                    street: 'Yenegoa 1',
+                    zipCode: '354623',
+                    country: 'Germany'
+                },
+                email: 'testing@getHeapSnapshot.com'
+            },
+            deliveryMethod: 'Pay on Delivery'
+        }
+        axios.post('/orders.json', data)
+            .then(response => 
+                    this.setState({loading: false, purchasing: false})
+                )
+            .catch(error =>
+                    this.setState({loading: false, purchasing: false})
+                );
     }
 
     render() {
@@ -94,6 +122,7 @@ class StoreBuilder extends Component {
                     cancelpurHandler={this.cancelPurchaseHandler}
                     continuePurchase={this.continuePurchaseHandler}
                     purchasing={this.state.purchasing}
+                    loading={this.state.loading}
                     />
                 <div className={classes.Control}>Build Control</div>
             </Aux>
@@ -101,4 +130,4 @@ class StoreBuilder extends Component {
     }
 }
 
-export default StoreBuilder;
+export default withErrorHandler(StoreBuilder, axios);
