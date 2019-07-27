@@ -11,12 +11,24 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 class StoreBuilder extends Component {
 
     state = {
+        storeItems: null,
         cartItemsCount: 0,
         cartItems: [],
         TotalPrice: 0,
         purchaseable: false,
         purchasing: false,
-        loading: false
+        loading: false,
+        error: false
+    }
+
+    componentDidMount() {
+        axios.get('/storeItems.json')
+        .then(response => {
+            this.setState({storeItems: response.data});
+        })
+        .catch(error => {
+            this.setState({error: true});
+        });
     }
 
     addItemHandler = (item) => {
@@ -81,7 +93,6 @@ class StoreBuilder extends Component {
     }
 
     continuePurchaseHandler = () => {
-        //alert('continue');
         this.setState({
             loading: true
         });
@@ -123,6 +134,8 @@ class StoreBuilder extends Component {
                     continuePurchase={this.continuePurchaseHandler}
                     purchasing={this.state.purchasing}
                     loading={this.state.loading}
+                    itemsInStore={this.state.storeItems}
+                    error={this.state.error}
                     />
                 <div className={classes.Control}>Build Control</div>
             </Aux>

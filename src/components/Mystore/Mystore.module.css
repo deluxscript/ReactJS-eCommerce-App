@@ -9,7 +9,7 @@
     margin: 10px;
     text-align: center;
     background-color: #e9eff3;
-    min-height: 550px;
+    min-height: calc(100vh - 105px);;
 }
 
 @media ( max-width: 768px) {

@@ -18,26 +18,39 @@ const Mystore = ( props ) => {
         OrderSummary = <Spinner />;
     }
 
+    let Appview = props.error ? <p>Store Items can't be loaded</p> : <Spinner />;
+
+    if(props.itemsInStore) {
+
+        Appview = (
+            <Aux>
+                <div className={classes.Content}>
+                    <SingleItem 
+                        Add={props.addItem}
+                        deleteItem={props.removeItem}
+                        storeItems={props.itemsInStore}
+                    />
+                </div>
+                <div className={classes.Cart}>
+                    <Cart
+                        cartCount={props.cart}
+                        cartItems={props.items}
+                        tPrice={props.totalPrice}
+                        disablebtn = {props.prchase}
+                        checkout = {props.purHandler}
+                    />
+                </div>
+            </Aux>
+        );
+
+    }
+
     return (
         <Aux>
             <Modal show={props.purchasing} cancelModal = {props.cancelpurHandler}>
                 {OrderSummary}
             </Modal>
-            <div className={classes.Content}>
-                <SingleItem 
-                    Add={props.addItem}
-                    deleteItem={props.removeItem}
-                />
-            </div>
-            <div className={classes.Cart}>
-                <Cart
-                    cartCount={props.cart}
-                    cartItems={props.items}
-                    tPrice={props.totalPrice}
-                    disablebtn = {props.prchase}
-                    checkout = {props.purHandler}
-                />
-            </div>
+            {Appview}
         </Aux>
     );
 }
